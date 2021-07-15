@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<%= form_for Image.new do |f| %>
+				<%= f.file_field :file, multiple: true, name: "image[file]" %>
+				<%= f.hidden_field :gallery_id, value: @gallery.id %>
+			<% end %>
+		</div>
+	</div>
+	<br><br>
+	<div id="imagesgallery">
+		<% @gallery.images.each_slice(4) do |slice| %>
+			<div class="row">
+				<% slice.each do |i| %>
+				<div class="col-sm-3">
+					<div class="thumbnail painting">
+					  <%= image_tag(i.file.url(:thumb), class: 'img-responsive') %>
+					  <div class="actions">
+					    <%= link_to "Eliminar", admin_image_path(i), :confirm => 'Are you sure?', :method => :delete %>
+					  </div>
+					</div>
+				</div>
+				<% end %>
+			</div>
+	<% end %>
+	</div>
+</div>

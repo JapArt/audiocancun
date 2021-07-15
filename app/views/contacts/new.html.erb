@@ -1,0 +1,29 @@
+<div class="contact-background">
+	<h1><%= (t 'contact.title') %></h1>
+</div>
+
+<div class="contact-back">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<%= render 'form' %>
+			</div>
+			<div class="col-md-4">
+				<h2><i class="icon-mail"></i> <%= t 'contact.email' %></h2>
+				<p>info@audiocancun.com</p>
+
+				<h2><i class="icon-phone"></i> <%= t 'contact.tel' %></h2>
+				<p>+52-998-271-4514</p>
+
+				<h2><i class="icon-share"></i> <%= t 'contact.redes' %></h2>
+			
+				<%= link_to '<i class="icon-facebook"></i>'.html_safe, "http://www.facebook.com/pages/Audio-Cancun/140245099412517", class: 'button-facebook' %>
+				<%= link_to '<i class="icon-youtube"></i>'.html_safe, "http://www.youtube.com/user/AUDIOCANCUN", class: 'button-youtube' %>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<br><br><br>
+<%= render 'services/footer' %>
+

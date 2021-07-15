@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "AudioCancun" %></title>
+    <link href='http://fonts.googleapis.com/css?family=Lustria' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+
+  <body>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50369918-1', 'audiocancun.com');
+      ga('send', 'pageview');
+
+    </script>
+
+  <nav class="navbar navbar-default navbar-gallery" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to (image_tag 'audiocancun.png'), root_path, class: 'navbar-brand' %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to (t 'navbar.home'), root_path %></li>
+        <li><%= link_to (t 'navbar.services'), bodas_path %></li>
+        <li><%= link_to (t 'navbar.gallery'), galleries_path %></li>
+        <li><%= link_to (t 'navbar.contact'), contacto_path %></li>
+        <li class="navdivider"></li>
+        <li class="language">
+          <% if I18n.locale == I18n.default_locale %>
+            <%= link_to "English", :locale=>'en', "data-no-turbolink" => 'true'%>
+          <% else %>
+            <%= link_to "Español", :locale=>'es', "data-no-turbolink" => 'true'%>
+          <%end%>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <%= yield %>
+    <br><br>
+    <%= javascript_include_tag "application" %>
+    <%= render 'services/footer' %>
+  </body>
+  <%= yield :skrollr %>
+</html>

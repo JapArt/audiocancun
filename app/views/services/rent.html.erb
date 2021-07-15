@@ -1,0 +1,90 @@
+<%= content_for :title do %>
+	<% if I18n.locale == I18n.default_locale %>
+	Audiocancun | Renta y Operación de Equipo Audiovisual
+	<% else %>
+	Audiocancun | Rent & Operation of Audiovisual Equipment
+	<% end %>
+<% end %>
+
+<div class="services-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<h1><%= t 'body.services.rent.title' %></h1> 
+				<% if I18n.locale == I18n.default_locale %>
+				<h3>Tenemos a su disposición las mejores marcas de equipos a los mejores precios del mercado.</h3>
+				<% else %>
+				<h3>In addition to the professionalism of our staff, we have everything to make your event perfect</h3>
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+	
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 services-body">
+			<h2><%= t 'body.services.title' %></h2>
+			<% if I18n.locale == I18n.default_locale %>
+			<ul>
+				<li>Bocinas</li>
+				<li>Lamparas led P.A.R.</li>
+				<li>Cabezas moviles</li>
+				<li>Microfonos</li>
+				<li>Consolas de audio</li>
+				<li>Consolas de iluminación</li>
+				<li>Estructuras</li>
+				<li>DJ’s y MC’s</li>
+				<li>Personal técnico</li>
+				<li>Pantallas</li>
+				<li>Proyectores</li>
+				<li>Pistas de baile de leds integrados</li>
+				<li>Pistas de baile de charol</li>
+				<li>Escenarios</li>
+				<li>Mobiliario lounge</li>
+				<li>Lamparas chinas</li>
+				<li>Y mucho mas…</li>
+			</ul>
+			<% else %>			
+			<ul>
+				<li>Speakers</li>
+				<li>LED Lamps</li>
+				<li>Moving heads</li>
+				<li>Microphones (wireless, wired, handled, lavalier, headset, etc)</li>
+				<li>Audio Mixers</li>
+				<li>Lighting consoles</li>
+				<li>Structures</li>
+				<li>DJS & MCS</li>
+				<li>A/V Technicians</li>
+				<li>Projection Screens</li>
+				<li>Video Projectors</li>
+				<li>LED Integrated Dancefloors (Lightup)</li>
+				<li>White or black Vinyl Dancefloors</li>
+				<li>Stages</li>
+				<li>Lounge furniture</li>
+				<li>Chinese Lamps</li>
+				<li>And more…</li>
+			</ul>
+			<% end %>
+		</div>
+		<div class="col-sm-4 services-contact">
+			<h2><%= (t 'contact.title') %></h2>
+			<h3><i class="icon-mail"></i> <%= t 'contact.email' %></h3>
+				<p>info@audiocancun.com</p>
+
+				<h3><i class="icon-phone"></i> <%= t 'contact.tel' %></h3>
+				<p>+52-998-271-4514</p>
+
+				<h3><i class="icon-share"></i> <%= t 'contact.redes' %></h3>
+			
+				<%= link_to '<i class="icon-facebook"></i>'.html_safe, "http://www.facebook.com/pages/Audio-Cancun/140245099412517", class: 'button-facebook', target: "_blank" %>
+				<%= link_to '<i class="icon-youtube"></i>'.html_safe, "http://www.youtube.com/user/AUDIOCANCUN", class: 'button-youtube', target: "_blank" %>
+		</div>
+	</div>
+</div>
+
+<%= render 'footer' %>

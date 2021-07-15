@@ -1,0 +1,215 @@
+<div class="social-icons">
+  <%= link_to "<i class='icon-facebook'></i>".html_safe, "http://www.facebook.com/pages/Audio-Cancun/140245099412517", class: 'facebook', target: "_blank" %>
+  <%= link_to "<i class='icon-youtube'></i>".html_safe, "http://www.youtube.com/user/AUDIOCANCUN", class: 'youtube', target: "_blank" %>
+  <%= link_to "<i class='icon-mail'></i>".html_safe, "/contacto", class: 'mail' %>
+</div>
+
+<div class="index-background"></div>
+
+<div id="carousel-index" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-index" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-index" data-slide-to="1"></li>
+    <li data-target="#carousel-index" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item index-back active">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <%= image_tag 'microfono.png', class: 'img-responsive', id: 'img1' %>
+          </div>
+          <div class="col-sm-6">
+            <h2 id="head1"><%= t 'body.slide1.title' %></h2>
+            <p><%= t 'body.slide1.subtitle' %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item index-back">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2 id="head2"><%= t 'body.slide2.title' %></h2>
+            <p><%= t 'body.slide2.subtitle' %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item index-back">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <center><h2><%= t 'body.slide3.title' %></h2></center>
+            <center><p><%= t 'body.slide3.subtitle' %></p></center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% flash.each do |name, msg| %>
+  <div class="message alert-dismiss">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <center><strong><%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %></strong></center>
+  </div>
+<% end %>
+
+
+<div class="index-body-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3><%= raw t 'body.caption' %></h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="caption">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2><%= t 'body.services.title' %> <div class="head-boarding"></div></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3><%= t 'body.services.corporate.title' %></h3>
+        <p class="bull">&bull;</p>
+        <p><%= t 'body.services.corporate.body' %></p>
+        <%= link_to (t 'body.services.button'), empresariales_path, class: 'btn btn-lg btn-transparent' %>
+      </div>
+      <div class="col-sm-4">
+        <h3><%= t 'body.services.social.title' %></h3>
+        <p class="bull">&bull;</p>
+        <p><%= t 'body.services.social.body' %></p>
+        <%= link_to (t 'body.services.button'), sociales_path, class: 'btn btn-lg btn-transparent' %>
+      </div>
+      <div class="col-sm-4">
+        <h3><%= t 'body.services.rent.title' %></h3>
+        <p class="bull">&bull;</p>
+        <p><%= t 'body.services.rent.body' %></p>
+        <%= link_to (t 'body.services.button'), renta_path, class: 'btn btn-lg btn-transparent' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="index-body-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2><%= t 'body.gallery.title' %> <div class="head-boarding"></div></h2>
+      </div>
+    </div>
+    <% @gallery.images.each_slice(4) do |slice| %>
+    <div class="row">
+      <% slice.each do |g| %>
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <%= link_to (image_tag g.file.url(:thumb)), g.file.url, "data-lightbox" => @gallery.name.downcase.gsub(" ","").gsub("!", "") %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+    <hr>
+    <div class="testi">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3><%= t 'body.aboutus.title' %></h3>
+          <div class="start-p"><%= t 'body.aboutus.head' %></div>
+          <%= raw t 'body.aboutus.body' %>
+          <ul>
+            <li>Isla Holbox</li>
+            <li>Tulum</li>
+            <li>Isla Mujeres</li>
+            <li>Cancun</li>
+            <li>Riviera Maya</li>
+            <li>Playa del Carmen</li>
+            <li>Cozumel</li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+
+          <h3><%= t 'body.clients.title' %>
+            <div class="testi-controls">
+              <a href="#carousel-testimonials" data-slide="prev"><</a>
+              <a href="#carousel-testimonials" data-slide="next">></a>
+            </div>
+          </h3> <!-- Controls -->
+
+          <div id="carousel-testimonials" class="carousel slide" data-ride="carousel">
+
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+                <% @testimonials.each_with_index do |t, index| %>
+                    <div class="item <% if index == 0 %>active<% end %>">
+                       <div class="testimonial">
+                        <% if I18n.locale == :es %>
+                        <blockquote><%= t.body %></blockquote>
+                        <% else %>
+                        <blockquote><%= t.body_en %></blockquote>
+                        <% end %>
+                       </div>
+                      <div class="client">
+                        <%= image_tag t.file.url(:fill_thumb), class: 'media-object pull-left img-circle' %>
+                        <h4>
+                          <%= t.name %> <br>
+                          <% if I18n.locale == :es %>
+                          <b><%= t.concept %></b>
+                          <% else %>
+                          <b><%= t.concept_en %></b>
+                          <% end %>
+                        </h4>
+                      </div>
+                      </div>
+                <% end %>
+
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+<hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2><%= t 'body.acknowledgements.title' %> <div class="head-boarding"></div></h2>
+      </div>
+    </div>
+<br>
+    <div class="row">
+      <div class="col-sm-4">
+        <script type="text/javascript" src="http://www.bodas.com.mx/_js/wp-rated.js?v=2"></script>
+          <center><div id="wp-rated">
+              <a href="https://www.weddingwire.com/reviews/audiocancun-cancun/9975cbb7646d7d58.html">
+                <img src="//www.weddingwire.com/assets/badges/BCA-2018/BCA2018-logo.png" />
+              </a>
+          </div></center>
+          <script>wpShowRatedv2('82613');</script>
+      </div>
+      <div class="col-sm-4 text-center">
+        <a href="https://www.weddingwire.com/reviews/audiocancun-cancun/9975cbb7646d7d58.html">
+          <img src="//www.weddingwire.com/assets/badges/BCA-2017/BCA2017-logo.png" />
+        </a>
+      </div>
+      <div class="col-sm-4">
+        <script src='//www.weddingwire.com/assets/vendor/widgets/ww-rated-2013.js' type='application/javascript'></script><div id='ww-widget-wwrated-2013'><a class="ww-top" target="_blank" title="Weddings, Wedding, Wedding Venues" href="https://www.weddingwire.com"></a><a class="ww-bottom" target="_blank" title="AUDIOCANCUN Reviews, Eastern Mexico DJ" href="https://www.weddingwire.com/reviews/audiocancun-cancun/9975cbb7646d7d58.html"></a></div><script>  WeddingWire.ensureInit(function() {WeddingWire.createWWRated2013({"vendorId":"9975cbb7646d7d58" }); });</script>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%= render 'footer' %>

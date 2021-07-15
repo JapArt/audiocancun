@@ -1,0 +1,73 @@
+en:
+ contact:
+  title: "Let us help"
+  name: "Name and Lastname"
+  tel: "Telephone"
+  email: "Email"
+  event: "Type of Event"
+  date: "Date"
+  schedule: "Schedule"
+  place: "Details of place"
+  person: "Number of guests"
+  req: "Requirements (audio, lights, karaoke, etc)"
+  comments: "Comments"
+  submit: "Request a Quote"
+  redes: "Social Media"
+
+ wedding:
+  title: "Weddings are the speciality of AUDIOCANCUN."
+  body: "We know the special and important that this event is for our clients, therefore we dedicate special dedication to the weddings; from the ceremony, the cocktail, the dinner and the reception, AUDIOCANCUN will help make that special day, even more special."
+  conoce: "Contact us"
+  clientes: "Testimonies"
+
+ navbar:
+  home: "Home"
+  services: "Weddings"
+  gallery: "Galleries"
+  contact: "Contact"
+ 
+ body:
+  slide1:
+   title: "Corporate Events"
+   subtitle: "We have the perfect solution for your event."
+  
+  slide2:
+   title: "Weddings & Events"
+   subtitle: "We help making dreams come true."
+  
+  slide3:
+   title: "Rent & Operation of Audiovisual Equipment"
+   subtitle: "High technology and efficiency"
+  
+  caption: "Our services cover all types of events where any kind of audiovisual equipment is required."
+  
+  services:
+   title: "Services"
+   button: "Read more"
+   
+   corporate:
+    title: "Corporate Events"
+    body: "Conventions, work sessions, expositions, meetings, demonstrations, product presentations, press conferences, congresses, etc"
+   
+   social:
+    title: "Social Events"
+    body: "Weddings, sweet sixteen party, birthdays, karaokes and partys in general. We have the best djs and technicians for the success of your event."
+   
+   rent:
+    title: "Rent & Operation of Audiovisual Equipment"
+    body: "Technology & Eficiency"
+
+  gallery:
+   title: "Our Gallery"
+   caption: "Click on a photo to see the complete gallery."
+  
+  aboutus:
+   title: "About Us"
+   head: "W"
+   body: "<p>e are a company dedicated to satisfy the audiovisual needs of our clients. We offer rent, sell and operation of audio and lighting equipment. We are committed  with the quality and the excellence in the service that we provide.</p><p>We have the best human and technical equipment, necesary to provide first level events.Our services cover all kinds of events where any kind of audiovisual equipment is required.</p><p>Our mision  is the satisfaction of our customers, which we achieve thanks to the dedication and effort of our human force, that is proven with every event. We cover the Peninsula de Yucatan area.</p>"
+
+  clients:
+   title: "Testimonials"
+  
+  acknowledgements:
+   title: "Acknowledgements"

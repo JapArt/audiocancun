@@ -1,0 +1,84 @@
+<%= content_for :title do %>
+	<% if I18n.locale == I18n.default_locale %>
+	Audiocancun | Eventos Sociales
+	<% else %>
+	Audiocancun | Social Events
+	<% end %>
+<% end %>
+
+
+<div class="sociales-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<h1><%= t 'body.services.social.title' %></h1> 
+				<% if I18n.locale == I18n.default_locale %>
+				<h3>Hacemos que su celebración sea inolvidable, creando siempre el mejor ambiente y cuidando siempre la calidad con los mejores equipos.</h3>
+				<% else %>
+				<h3>We make your celebration unforgettable, always creating the best atmosphere and ensuring the quality with the best brands of equipment.</h3>
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+	
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 services-body">
+			<h2><%= t 'body.services.title' %></h2>
+			<% if I18n.locale == I18n.default_locale %>
+			<ul>
+				<li>Audio</li>
+				<li>Iluminación</li>
+				<li>DJ’s y MC’s</li>
+				<li>Cabinas Iluminadas</li>
+				<li>Pistas de baile de leds integrados</li>
+				<li>Pistas de baile de charol</li>
+				<li>Pantallas de proyección</li>
+				<li>Proyectores</li>
+				<li>Lámparas chinas</li>
+				<li>Mobiliario lounge</li>
+				<li>Pirotecnia fría</li>
+				<li>Artículos de animación</li>
+				<li>Y mucho mas…</li>
+			</ul>
+			<% else %>
+			<ul>
+				<li>Audio Equipment</li>
+				<li>Lighting</li>
+				<li>DJS & MCS</li>
+				<li>Illuminated DJ Booths</li>
+				<li>LED Integrated Dancefloors (Lightup)</li>
+				<li>White or black Vinyl Dancefloors</li>
+				<li>Projection Screens</li>
+				<li>Video Projectors</li>
+				<li>Chinese Lamps</li>
+				<li>Lounge furniture</li>
+				<li>Cold fireworks</li>
+				<li>Props</li>
+				<li>And more…</li>
+			</ul>
+			<% end %>
+		</div>
+		<div class="col-sm-4 services-contact">
+			<h2><%= (t 'contact.title') %></h2>
+			<h3><i class="icon-mail"></i> <%= t 'contact.email' %></h3>
+				<p>info@audiocancun.com</p>
+
+				<h3><i class="icon-phone"></i> <%= t 'contact.tel' %></h3>
+				<p>+52-998-271-4514</p>
+
+				<h3><i class="icon-share"></i> <%= t 'contact.redes' %></h3>
+			
+				<%= link_to '<i class="icon-facebook"></i>'.html_safe, "http://www.facebook.com/pages/Audio-Cancun/140245099412517", class: 'button-facebook', target: "_blank" %>
+				<%= link_to '<i class="icon-youtube"></i>'.html_safe, "http://www.youtube.com/user/AUDIOCANCUN", class: 'button-youtube', target: "_blank" %>
+		</div>
+	</div>
+</div>
+
+<%= render 'footer' %>
+

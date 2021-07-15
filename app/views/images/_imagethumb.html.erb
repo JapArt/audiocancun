@@ -1,0 +1,8 @@
+<div class="col-sm-3">
+	<div class="thumbnail painting">
+		<%= image_tag(@image.file.url(:thumb), class: 'img-responsive') %>
+		<div class="actions">
+			<%= link_to "Eliminar", admin_image_path(@image), :confirm => 'Are you sure?', :method => :delete %>
+		</div>
+	</div>
+</div>

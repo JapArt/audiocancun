@@ -1,0 +1,25 @@
+<div class="container galleries">
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><%= link_to (t 'navbar.home'), root_path %></li>
+        <li><%= link_to (t 'navbar.gallery'), galleries_path %></li>
+        <li class="active"><%= @gallery.name %></li>
+      </ol>
+
+      <h1><%= @gallery.name %></h1><div class="head-boarding"></div>
+      <br><br><br>
+    </div>
+  </div>
+  <% @gallery.images.each_slice(4) do |slice| %>
+  <div class="row">
+    <% slice.each do |g| %>
+    <div class="col-sm-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag g.file.url(:thumb)), g.file.url, "data-lightbox" => @gallery.name.downcase.gsub(" ","").gsub("!", "") %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>

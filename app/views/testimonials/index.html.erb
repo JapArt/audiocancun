@@ -1,0 +1,75 @@
+<% if I18n.locale == :es %>
+<div class="testimonies-background">
+  <h1>Nuestros Clientes</h1>
+</div>
+
+<div class="testimonies-back">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-sm-8">
+          <% @testimonials.each do |t| %>
+          <h2><%= t.name %> <small><%= t.concept %></small></h2>
+          <p><%= simple_format t.body %></p>
+          <hr>
+        <% end %>  
+        </div> 
+        <div class="col-md-4">
+        <h2>Contáctanos</h2>
+        <hr>
+        <h2><i class="icon-mail"></i> <%= t 'contact.email' %></h2>
+        <p>info@audiocancun.com</p>
+
+        <h2><i class="icon-phone"></i> <%= t 'contact.tel' %></h2>
+        <p>+52-998-271-4514</p>
+
+        <h2><i class="icon-share"></i> <%= t 'contact.redes' %></h2>
+      
+        <%= link_to '<i class="icon-facebook"></i>'.html_safe, root_path, class: 'button-facebook' %>
+        <%= link_to '<i class="icon-youtube"></i>'.html_safe, root_path, class: 'button-youtube' %>
+      </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<% else %>
+<div class="testimonies-background">
+  <h1>Testimonies</h1>
+</div>
+
+<div class="testimonies-back">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-sm-8">
+          <% @testimonials.each do |t| %>
+          <h2><%= t.name %> <small><%= t.concept_en %></small></h2>
+          <p><%= simple_format t.body_en %></p>
+          <hr>
+        <% end %>  
+        </div> 
+        <div class="col-md-4">
+        <h2>Contact Us</h2>
+        <hr>
+        <h2><i class="icon-mail"></i> <%= t 'contact.email' %></h2>
+        <p>alexnevsky@audiocancun.com</p>
+
+        <h2><i class="icon-phone"></i> <%= t 'contact.tel' %></h2>
+        <p>+52-998-271-4514</p>
+
+        <h2><i class="icon-share"></i> <%= t 'contact.redes' %></h2>
+      
+        <%= link_to '<i class="icon-facebook"></i>'.html_safe, root_path, class: 'button-facebook' %>
+        <%= link_to '<i class="icon-youtube"></i>'.html_safe, root_path, class: 'button-youtube' %>
+      </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<% end %>

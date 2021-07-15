@@ -1,0 +1,15 @@
+<footer>
+  <center><%= image_tag 'audiocancun.png' %></center>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <%= link_to (t 'navbar.home'), root_path %>
+        <%= link_to (t 'navbar.services'), bodas_path %>
+        <%= link_to (t 'navbar.gallery'), root_path %>
+        <%= link_to (t 'navbar.contact'), contacto_path %>
+        <p>Todos los derechos reservados 2014</p>
+        <%= link_to "Política de Privacidad", politica_path, class: 'politica' %>
+        </div>
+      </div>
+  </div>
+</footer>
